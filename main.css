@@ -6,7 +6,7 @@ body {
 }
 
 .video-container {
-    max-width: 62rem;
+    max-width: 60rem;
     margin: 0 auto;
     display: block;
 }
@@ -23,10 +23,6 @@ p {
 
 .main-header img {
     max-width: 8rem;
-}
-
-video {
-    border: 1px solid gray;
 }
 
 .person-selector {
@@ -95,3 +91,10 @@ video {
     background-image: url(assets/mike.png);
 }
 
+video {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}

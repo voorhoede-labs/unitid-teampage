@@ -1,48 +1,51 @@
-(function() {
+(function(win) {
 
     var vid = document.getElementById('vid');
-    var video_button = document.getElementById('video_button');
         var didit = false;
+        var duration = 10;
+        var timestamps = {
+            'laura': 5,
+            'mike': 26,
+            'sophie': 52,
+            'puck': 72.4,
+            'jane': 106,
+            'matthijs': 133,
+            'hylke': 150
+        };
 
     var vid_thing = {
 
       init: function() {
         vid.classList.add('visible');
+
           return this;
       },
 
       run: function() {
-
-            this.goToPointInVideo(8);
-            this.playForSomeTime(1);
-          this.attachButtonEvent();
+        win.addEventListener('hashchange', function(event) {
+              var person = window.location.hash.replace('#', '');
+              this.goToPointInVideo(timestamps[person]);
+              vid.play();
+              // this.playForSomeTime(duration);
+        }.bind(this));
+        vid.play();
+            // this.goToPointInVideo(8);
+            // this.playForSomeTime(1);
           return this;
-      },
-
-      attachButtonEvent: function() {
-          video_button.addEventListener('click', function(event) {
-            if (this.is_playing) {
-                clearTimeout(this.timeout);
-                vid.pause();
-            } else {
-                vid.play();
-            }
-          }.bind(this));
       },
 
       goToPointInVideo: function(seconds) {
         vid.pause();
         vid.currentTime = seconds;
+        clearTimeout(this.timeout);
         return this;
       },
 
       playForSomeTime: function(seconds) {
         vid.pause();
         vid.play();
-        this.is_playing = true;
         this.timeout = setTimeout(function() {
             vid.pause();
-            this.is_playing = false;
         }.bind(this), seconds * 1000);
       },
     }
@@ -55,4 +58,4 @@
         }
     });
 
-}());
+}(window));
