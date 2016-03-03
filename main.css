@@ -36,6 +36,7 @@ video {
     border-radius: 0.5rem;
     background-color: #dadada;
     text-align: center;
+    overflow: hidden;
 }
 
 .morebutton {
@@ -45,14 +46,19 @@ video {
     padding: 0;
     margin: 0;
     width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    color: white;
 }
 
 .person-selector li {
     height: 6rem;
     flex: 1;
+    background-repeat: none;
+    background-size: cover;
 }
 
-a, a:hover, a:visited {
+.person-selector a, .person-selector a:hover, .person-selector a:visited {
     padding-top: 4rem;
     display: block;
     height: 100%;
@@ -66,3 +72,26 @@ a, a:hover, a:visited {
     max-width: 62rem;
     margin: 0 auto;
 }
+
+.laura {
+    background-image: url(assets/laura.png);
+}
+.hylke {
+    background-image: url(assets/hylke.png);
+}
+.jane {
+    background-image: url(assets/jane.png);
+}
+.mat {
+    background-image: url(assets/matthijs.png);
+}
+.puck {
+    background-image: url(assets/puck.png);
+}
+.sophie {
+    background-image: url(assets/sophie.png);
+}
+.mike {
+    background-image: url(assets/mike.png);
+}
+
