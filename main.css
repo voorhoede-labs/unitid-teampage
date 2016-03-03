@@ -1,0 +1,27 @@
+body {
+    min-width: 20rem;
+}
+
+.video-container {
+    max-width: 62rem;
+    margin: 0 auto;
+    border: 10px dashed goldenrod;
+    display: block;
+}
+
+.video {
+    width: 100%;
+    border: 5px dashed red;
+    min-height: 2rem;
+}
+
+.person-selector {
+    margin-top: 2rem;
+    border: 10px dashed green;
+    list-style: none;
+    padding-left: 0;
+}
+
+.person-selector li {
+    display: inline-block;
+}
