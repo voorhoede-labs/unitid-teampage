@@ -1,0 +1,24 @@
+# [editorconfig.org](http://editorconfig.org)
+# Defines the coding style for different editors and IDEs.
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+
+# Unix-style newlines with a newline ending every file
+end_of_line = lf
+insert_final_newline = true
+
+# default
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# type/language-specific overrides
+[package.json]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
